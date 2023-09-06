@@ -1,0 +1,24 @@
+{
+  "name": "@agenthyped/simulation",
+  "version": "1.0.0",
+  "description": "Advanced economy framework system used for Discord and uses mongodb. This package was created to work with \"Fatal-Bot\"",
+  "main": "index.js",
+  "keywords": [
+    "discord",
+    "economy",
+    "discord.js",
+    "bot",
+    "bots",
+    "mongo",
+    "mongoose",
+    "mongodb",
+    "discord-economy",
+    "discord-eco",
+    "framework"
+  ],
+  "author": "AgentHyped",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^6.11.1"
+  }
+}
