@@ -3,18 +3,18 @@ DISCLAIMER! THIS PROJECT IS STILL IN DEVELOPMENT. USE AT YOUR OWN RISK
 
 To download the package just do:
 ```cli
-npm i @agenthyped/simulation
+npm i agenthyped-simulation
 ```
 If any updates are released just do:
 ```cli
-npm update @agenthyped/simulation
+npm update agenthyped-simulation
 ```
 
 
 # How to get started
 First lets start of with the mandatory things. Include the module into your project.
 ```js
-const Simulation = require(@agenthyped/simulation);
+const Simulation = require(agenthyped-simulation);
 ```
 Next you must provide a valid mongoDB url, as this module uses mongoDB to store data.
 ```js
