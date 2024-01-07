@@ -1,6 +1,6 @@
 {
-  "name": "@agenthyped/simulation",
-  "version": "1.0.0",
+  "name": "agenthyped-simulation",
+  "version": "1.1.0",
   "description": "Advanced economy framework system used for Discord and uses mongodb. This package was created to work with \"Fatal-Bot\"",
   "main": "index.js",
   "keywords": [
