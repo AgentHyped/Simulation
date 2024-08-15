@@ -2,7 +2,7 @@
 [![downloadsBadge](https://img.shields.io/npm/d18m/agenthyped-simulation.svg?style=for-the-badge)](https://www.npmjs.com/package/agenthyped-simulation)
 
 # Introducing "Simulation" a NPM package for economy
-#### DISCLAIMER! THIS PROJECT IS STILL IN DEVELOPMENT. USE AT YOUR OWN RISK
+#### DISCLAIMER! THIS PROJECT IS STILL IN DEVELOPMENT. NEW FEATURES ARE ALWAYS BEING ADDED AND BUGS ARE ALWAYS BEING FIXED
 
 Welcome to Simulation, the global economy package specifically targeted for use with Discord bots. The most important thing to remember about Simulation is that it is a 'global' economy system. What does this mean? this means that no matter what Discord server you are in progression will always roll over and all users can access anything from any server at anytime. At this moment Simulation does not include nor support per guild economy progression yet, this feature may come as a seperate NPM package as I have no idea whether it's possible to include this in this current package due to how different the code is.
 
