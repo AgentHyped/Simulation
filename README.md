@@ -1,4 +1,4 @@
-[![versionBadge]([https://img.shields.io/npm/v/discord-giveaways?style=for-the-badge](https://img.shields.io/npm/v/agenthyped-simulation.svg?style=for-the-badge))](https://www.npmjs.com/package/agenthyped-simulation)
+[![versionBadge](https://img.shields.io/npm/v/agenthyped-simulation.svg?style=for-the-badge)](https://www.npmjs.com/package/agenthyped-simulation)
 [![downloadsBadge](https://img.shields.io/npm/d18m/agenthyped-simulation.svg?style=for-the-badge)](https://www.npmjs.com/package/agenthyped-simulation)
 
 # Introducing "Simulation" a NPM package for economy
