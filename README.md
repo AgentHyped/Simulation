@@ -2,9 +2,13 @@
 [![downloadsBadge](https://img.shields.io/npm/d18m/agenthyped-simulation.svg?style=for-the-badge)](https://www.npmjs.com/package/agenthyped-simulation)
 
 # Introducing "Simulation" a NPM package for economy
-#### DISCLAIMER! THIS PROJECT IS STILL IN DEVELOPMENT. NEW FEATURES ARE ALWAYS BEING ADDED AND BUGS ARE ALWAYS BEING FIXED
+#### DISCLAIMER! THIS PROJECT IS STILL IN DEVELOPMENT. USE AT YOUR OWN RISK
 
 Welcome to Simulation, the global economy package specifically targeted for use with Discord bots. The most important thing to remember about Simulation is that it is a 'global' economy system. What does this mean? this means that no matter what Discord server you are in progression will always roll over and all users can access anything from any server at anytime. At this moment Simulation does not include nor support per guild economy progression yet, this feature may come as a seperate NPM package as I have no idea whether it's possible to include this in this current package due to how different the code is.
+
+# Github
+
+You can submit a bug report or start a pull request for new features on the github page (Took me a while to setup a github lmao). 
 
 # Installation
 
@@ -31,18 +35,29 @@ Simulation.mongoURL("YOUR MONGODB CONNECTION STRING");
 # Change-Log
 #### READ THIS FIRST! IF YOU'RE AN ACTIVE USER OF THIS PACKAGE THEN YOU SHOULD ALWAYS REFER TO THE CHANGES FIRST AND UPDATE ANY CODE IN YOUR PROJECT, OTHERWISE NEW USERS CAN KEEP SCROLLING FOR THE METHODS
 
-### Updates To Functions
+### Updates to the package
 
-Updated "Simulation.inventory" to include the "returnMapped" parameter, if the param has been set to true then will return the users items mapped out as per usual,
-if the param is set to anything other than true or is not provided at all then return the items and the quantity in an object which will now allow users to have more 
-flexibilty and creativity in to display their users inventory
-
-### Added Functions
-
-"Simulation.achievements.create" allows you to create achievements for your users to earn for reaching milestones or even given to users for your own purposes or uses for your project
+Added a version checker, if the version installed on your system does not match the latest version on the NPM website, then it will warn you to update your package. This will not effect you in any way, you can still use older versions of the package.
 
 
-"Simulation.achievements.getAll" grabs every users owned achievements and returns an object the same as the "Simulation.vaults.owned" method. See the functions for more information
+Divided all functions in the main file up into seperate files to smoothen out the code.
+
+### Updates to functions
+
+Changed functions to a new called method.
+
+
+Simulation.affixmoney ==> Simulation.money.affix
+
+Simulation.removeMoney ==> Simulation.money.remove
+
+Simulation.createUser ==> Simulation.user.create
+
+Simulation.deleteUser ==> Simulation.user.delete
+
+Simulation.giveMoney ==> Simulation.user.give
+
+Simulation.achievements.getAll ==> Simulation.achievements.retrieve
 
 # Functions
 
@@ -70,11 +85,11 @@ const balance = await Simulation.balance(UserId, currencyName)
 console.log(balance) // Returns the amount of a specific currency you have stored in the database.
 ```
 
-**affixMoney**
+**money.affix**
 
 Add money to someones bank account.
 ```js
-Simulation.affixMoney(UserId, Money, currencyName) // Adds money to the currency provided.
+Simulation.money.affix(UserId, Money, currencyName) // Adds money to the currency provided.
 ```
 
 **daily**
@@ -86,30 +101,30 @@ const dailyReward = await Simulation.daily(UserId, IncomeThreshold, currencyName
 console.log(dailyReward) // Returns either the amount that is earned, or a cooldown message.
 ```
 
-**removeMoney**
+**money.remove**
 
 Remove money from a users bank account.
 ```js
-Simulation.removeMoney(UserId, Money, currencyName)
+Simulation.money.remove(UserId, Money, currencyName)
 
 /*
- For future reference you can just use the affixMoney function to remove money, for example doing this "-200".
+ For future reference you can just use the money.affix function to remove money, for example doing this "-200".
  But this function is here if anyone needs it anyway.
 */
 ```
 
-**createUser**
+**user.create**
 
 Creates a user in the database by providing the ID of the user.
 ```js
-Simulation.createUser(UserId, currencyName) // Creates a document in the database tailored to the chosen user. You have to make sure you input a valid ID and currency name.
+Simulation.user.create(UserId, currencyName) // Creates a document in the database tailored to the chosen user. You have to make sure you input a valid ID and currency name.
 ```
 
-**deleteUser**
+**user.delete**
 
 Deletes a user in the database by providing an ID of the user.
 ```js
-Simulation.deleteUser(UserId) // This does the complete opposite of what is explained in the createUser function.
+Simulation.user.delete(UserId) // This does the complete opposite of what is explained in the createUser function.
 ```
 
 **leaderboard**
@@ -121,11 +136,11 @@ const leaderboard = await Simulation.leaderboard(currencyName)
 console.log(leaderboard) // Returns the top 10 users with the most currency provided in the database.
 ```
 
-**giveMoney**
+**user.give**
 
 Send money to another users bank account.
 ```js
-Simulation.giveMoney(UserId, UserIdSec, currencyName) // The first parameter is the user thats giving the money. The second parameter is the user that will receive it.
+Simulation.user.give(UserId, UserIdSec, currencyName) // The first parameter is the user thats giving the money. The second parameter is the user that will receive it.
 ```
 **doubleOrNothing**
 
@@ -237,7 +252,7 @@ await Simulation.vaults.deposit(UserId, Vault, Money, currencyName)
 
  If a vault name does not match the one provided in the "Vault" param it will return "Vault not found."
  And if you do not have enough money to deposit it will return "You do not have enough money."
-/*
+*/
 ```
 
 **vaults.withdraw**
@@ -283,11 +298,11 @@ await Simulation.achievements.create(UserId, achievementName, achievementDescrip
 */
 ```
 
-**achievements.getAll**
+**achievements.retrieve**
 
 Retrieve all achievements stored in the database for a specific user.
 ```js
-const achievements = await Simulation.achievements.getall(UserId)
+const achievements = await Simulation.achievements.retrieve(UserId)
 
 console.log(achievements)
 
