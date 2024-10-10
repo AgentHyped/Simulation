@@ -2,7 +2,7 @@ const { exec } = require('child_process');
 const { readFileSync } = require('fs');
 const { red, yellow, blue, green, magenta, greenBright } = require('colorette');
 
-const packageJson = JSON.parse(readFileSync('./package.json', 'utf8'));
+const packageJson = JSON.parse(readFileSync(__dirname + '../../../package.json', 'utf8'));
 const currentVersion = packageJson.version;
 
 exec(`npm show ${packageJson.name} version`, (err, stdout, stderr) => {
