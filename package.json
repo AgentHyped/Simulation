@@ -1,7 +1,7 @@
 {
   "name": "agenthyped-simulation",
-  "version": "2.3.0",
-  "description": "Advanced economy framework system used for Discord and uses mongodb. This package was created to work with \"Fatal-Bot\"",
+  "version": "2.3.2",
+  "description": "Advanced economy framework system used for Discord and uses mongodb. For use with any project, not just Discord Bots",
   "main": "index.js",
   "keywords": [
     "discord",
