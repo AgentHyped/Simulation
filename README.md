@@ -35,29 +35,9 @@ Simulation.mongoURL("YOUR MONGODB CONNECTION STRING");
 # Change-Log
 #### READ THIS FIRST! IF YOU'RE AN ACTIVE USER OF THIS PACKAGE THEN YOU SHOULD ALWAYS REFER TO THE CHANGES FIRST AND UPDATE ANY CODE IN YOUR PROJECT, OTHERWISE NEW USERS CAN KEEP SCROLLING FOR THE METHODS
 
-### Updates to the package
+### Fixes to the package
 
-Added a version checker, if the version installed on your system does not match the latest version on the NPM website, then it will warn you to update your package. This will not effect you in any way, you can still use older versions of the package.
-
-
-Divided all functions in the main file up into seperate files to smoothen out the code.
-
-### Updates to functions
-
-Changed functions to a new called method.
-
-
-Simulation.affixmoney ==> Simulation.money.affix
-
-Simulation.removeMoney ==> Simulation.money.remove
-
-Simulation.createUser ==> Simulation.user.create
-
-Simulation.deleteUser ==> Simulation.user.delete
-
-Simulation.giveMoney ==> Simulation.user.give
-
-Simulation.achievements.getAll ==> Simulation.achievements.retrieve
+Fixed the NPM error that shows when starting your project, this is just due to an incorrect file path.
 
 # Functions
 
