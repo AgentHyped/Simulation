@@ -107,7 +107,7 @@ class Simulation {
   }
 
   static async #GetUser(UserId){
-    return GetUser()
+    return GetUser(UserId)
   }
 
   static get vaults() {
