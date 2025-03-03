@@ -23,17 +23,15 @@ const createCurrency = require("./src/functions/money/create");
 const deleteCurrency = require("./src/functions/money/delete");
 const createAchievements = require("./src/functions/achievements/create");
 const getAllAchievements = require("./src/functions/vaults/withdraw");
+const convertCurrency = require("./src/functions/money/convert")
 
 class Simulation {
 
   static async mongoURL(mongoDBUrl) {
     if(!mongoDBUrl) throw new TypeError("A valid database url was not found. SOLUTION: Provide a MongoDB url");
     mongooseUrl = mongoDBUrl
-    return mongoose.connect(mongoDBUrl, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useFindAndModify: false
-    });
+    mongoose.set('strictQuery', true);
+    return mongoose.connect(mongoDBUrl);
   }
 
   static async balance(UserId, currencyName) {
@@ -139,6 +137,7 @@ class Simulation {
     return {
       create: this.#createCurrency.bind(this),
       delete: this.#deleteCurrency.bind(this),
+      convert: this.#convertCurrency.bind(this),
     };
   }
 
@@ -148,6 +147,10 @@ class Simulation {
 
   static async #deleteCurrency(currencyName){
     return deleteCurrency(currencyName);
+  }
+
+  static async #convertCurrency(UserId, currencyToConvert, currencyReceived, currencyAmount, rate){
+    return convertCurrency(UserId, currencyToConvert, currencyReceived, currencyAmount, rate)
   }
 
   static get achievements() {
