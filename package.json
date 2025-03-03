@@ -1,6 +1,6 @@
 {
   "name": "agenthyped-simulation",
-  "version": "2.3.2",
+  "version": "2.4.0",
   "description": "Advanced economy framework system used for Discord and uses mongodb. For use with any project, not just Discord Bots",
   "main": "index.js",
   "keywords": [
@@ -28,7 +28,7 @@
   "homepage": "https://github.com/AgentHyped/Simulation#readme",
   "dependencies": {
     "colorette": "^2.0.20",
-    "mongoose": "^6.11.1"
+    "mongoose": "^8.11.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
