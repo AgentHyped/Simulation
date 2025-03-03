@@ -2,7 +2,7 @@
 [![downloadsBadge](https://img.shields.io/npm/d18m/agenthyped-simulation.svg?style=for-the-badge)](https://www.npmjs.com/package/agenthyped-simulation)
 
 # Introducing "Simulation" a NPM package for economy
-#### DISCLAIMER! THIS PROJECT IS STILL IN DEVELOPMENT. USE AT YOUR OWN RISK
+#### DISCLAIMER! THIS PROJECT IS STILL IN DEVELOPMENT. BUGS MAY BE EXPECTED TO HAPPEN. IF YOU EXPERIENCE ANY MAJOR ISSUES OR BUGS THEN IT IS RECOMMENDED TO ROLL BACK TO THE LAST KNOWN STABLE VERSION OF THIS PACKAGE UNTIL A FIX IS RELEASED.
 
 Welcome to Simulation, the global economy package specifically targeted for use with Discord bots. The most important thing to remember about Simulation is that it is a 'global' economy system. What does this mean? this means that no matter what Discord server you are in progression will always roll over and all users can access anything from any server at anytime. At this moment Simulation does not include nor support per guild economy progression yet, this feature may come as a seperate NPM package as I have no idea whether it's possible to include this in this current package due to how different the code is.
 
@@ -35,9 +35,12 @@ Simulation.mongoURL("YOUR MONGODB CONNECTION STRING");
 # Change-Log
 #### READ THIS FIRST! IF YOU'RE AN ACTIVE USER OF THIS PACKAGE THEN YOU SHOULD ALWAYS REFER TO THE CHANGES FIRST AND UPDATE ANY CODE IN YOUR PROJECT, OTHERWISE NEW USERS CAN KEEP SCROLLING FOR THE METHODS
 
-### Fixes to the package
+### Updates to the package
 
-Fixed the NPM error that shows when starting your project, this is just due to an incorrect file path.
+Updated package "mongoose" to the latest version
+
+Added new function:
+Simulation.currency.convert
 
 # Functions
 
@@ -300,5 +303,23 @@ achievements.difficulty // Return "No difficulty" if you didn't set a difficulty
 
 /*
  Can return "You do not have any achievements." if no achievements have been stored or found for the user.
+*/
+```
+
+**currency.convert**
+
+If you have multiple currencys, convert a type of currency into another.
+```js
+await Simulation.currency.convert(UserId, currencyToConvert, currencyReceived, currencyAmount, rate)
+
+/*
+This will convert a set amount of the users currency into another saved currency in the database.
+The "rate" parameter controls how much "currencyToConvert" is needed to obtain 1 "currencyReceived".
+*/
+
+/*
+Controlling the "rate" parameter is simple. If "rate" equals 25, then 25 coins of currency set in
+the parameter "currencyToConvert" are needs to receive 1 coin of currency set in the parameter
+"currencyReceived".
 */
 ```
